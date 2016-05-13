@@ -21,7 +21,11 @@ class Game
   end
 
   def merge(new_name)
-    add_tribe(new_name)
+    Tribe.new({name: new_name, members: @tribes[0].members+@tribes[1].members})
+  end
+
+  def individual_immunity_challenge
+    Contestant.new("TestS")
   end
 
 end
