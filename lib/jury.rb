@@ -11,17 +11,8 @@ class Jury
   		finalists.each{|x| tmp<<x.to_s}
 		  final=Hash[tmp.zip (0...tmp.length)]
       final.keys.each{|k| final[k]=0}
-		  #puts final.length
-		  #final.each{|k,v| k[v]=0}
 		  @members.each{|member|  final[tmp[Random.rand((tmp.length))]]+=1
                               puts member}
-		#final[tmp[0]]=1
-		#final.each {|k,v| total_votes += v}
-  		#Hash[tmp.zip (0...0)]
-  		#@members.each {|member| }
-  		#puts @members
-  		#Hash[tmp.zip 0]
-  		#puts final
   		final
   	end
 

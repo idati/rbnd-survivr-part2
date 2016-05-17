@@ -6,20 +6,29 @@ require_relative "jury"
 #After your tests pass, uncomment this code below
 #=========================================================
 # # Create an array of twenty hopefuls to compete on the island of Borneo
-# @contestants = %w(carlos walter aparna trinh diego juliana poornima juha sofia julia fernando dena orit colt zhalisa farrin muhammed ari rasha gauri)
-# @contestants.map!{ |contestant| Contestant.new(contestant) }.shuffle!
+ @contestants = %w(carlos walter aparna trinh diego juliana poornima juha sofia julia fernando dena orit colt zhalisa farrin muhammed ari rasha gauri)
+ @contestants.map!{ |contestant| Contestant.new(contestant) }.shuffle!
 #
 # # Create two new tribes with names
-# @coyopa = Tribe.new(name: "Pagong", members: @contestants.shift(10))
-# @hunapu = Tribe.new(name: "Tagi", members: @contestants.shift(10))
+ @coyopa = Tribe.new(name: "Pagong", members: @contestants.shift(10))
+ @hunapu = Tribe.new(name: "Tagi", members: @contestants.shift(10))
 #
 # # Create a new game of Survivor
-# @borneo = Game.new(@coyopa, @hunapu)
+ @borneo = Game.new(@coyopa, @hunapu)
 #=========================================================
 
 
 #This is where you will write your code for the three phases
 def phase_one
+	8.times do |variable|
+		loosing_tribe=@borneo.immunity_challenge
+		puts "round: #{variable+1}"
+		puts "loosing tribe: #{loosing_tribe}"
+		loosing_tribe.members.each{|member| print "#{member.name}, "}
+		puts ""
+		puts "immune member: #{immune_member=@borneo.individual_immunity_challenge}"
+		puts "loosing member: #{@borneo.loosing_tribe.tribal_council(immune: immune_member)}"
+	end
 end
 
 def phase_two

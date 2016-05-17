@@ -34,10 +34,6 @@ class TestTribe < Minitest::Test
    end
   
    def test_tribe_to_s
-    #puts "name: #{@coyopa.name}"
-    #puts "members: #{@coyopa.members}"
-    #puts "#{@coyopa}"
-    #puts "#{@hunapu}"
      assert_output(@coyopa.name) {print "#{@coyopa}"}
    end
   #
