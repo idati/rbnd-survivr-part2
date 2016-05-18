@@ -1,3 +1,4 @@
+require 'minitest/autorun'
 #Start Here
 #This test file combines each of the other test files. Uncomment them in order, or you will run into dependency errors.
 
@@ -14,6 +15,6 @@ require_relative "jury_test"
  require_relative "game_test"
 #
 # #5
-# require_relative "survivr_test"
+ require_relative "survivr_test"
 
 #Once you pass all tests, uncomment the code in survivr.rb to run your full simulation!

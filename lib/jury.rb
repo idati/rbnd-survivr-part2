@@ -12,12 +12,12 @@ class Jury
 		  final=Hash[tmp.zip (0...tmp.length)]
       final.keys.each{|k| final[k]=0}
 		  @members.each{|member|  final[tmp[Random.rand((tmp.length))]]+=1
-                              puts member}
-  		final
+                              puts "#{member}, "}
+      final
   	end
 
     def report_votes(final_votes)
-      final_votes.keys.each{|k| puts final_votes[k]}
+      final_votes.keys.each{|k| puts "#{k} have #{final_votes[k]} points"}
     end
 
     def announce_winner(final_votes)

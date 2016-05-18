@@ -9,7 +9,6 @@ class TestContestant < Minitest::Test
   end
 
   def test_contestant_has_name
-    #puts @contestants.sample
     assert_respond_to @contestants.sample, :name
   end
 
