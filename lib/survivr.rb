@@ -26,37 +26,32 @@ def phase_one
 		loosing_tribe=@borneo.immunity_challenge
 		puts "round: #{variable+1}".green
 		puts "loosing tribe: #{loosing_tribe}".red
-		puts "immune member: #{immune_member=@borneo.individual_immunity_challenge}"
-		puts "loosing member: #{@borneo.loosing_tribe.tribal_council(immune: immune_member)}"
-		loosing_tribe.members.each{|member| print "#{member.name}, "}
+		puts "loosing member: #{@borneo.loosing_tribe.tribal_council}"
+    loosing_tribe.members.each{|member| print "#{member.name}, "}
 		puts ""
 	end
 end
 
 def phase_two
-	@borneo.add_tribe(@merge_tribe)
-	@borneo.merge_loosing_tribe
 	puts "----------------phase 2-----------------------".blue
 	3.times do |variable|
 		puts "round: #{variable+1}".green
 		puts "immune member: #{immune_member=@borneo.individual_immunity_challenge}"
-		puts "loosing member: #{@borneo.loosing_tribe.tribal_council(immune: immune_member)}"
-		@borneo.loosing_tribe.members.each{|member| print "#{member.name}, "}
+		puts "loosing member: #{@borneo.get_tribes[0].tribal_council(immune: immune_member)}"
+		@borneo.get_tribes[0].members.each{|member| print "#{member.name}, "}
 		puts ""
 	end
 
 end
 
 def phase_three
-	@borneo.add_tribe(@merge_tribe)
-	@borneo.merge_loosing_tribe
 	puts "----------------phase 3-----------------------".blue
 	7.times do |variable|
 		puts "round: #{variable+1}".green
 		puts "immune member: #{immune_member=@borneo.individual_immunity_challenge}"
-		puts "loosing member: #{looser=@borneo.loosing_tribe.tribal_council(immune: immune_member)}"
+		puts "loosing member: #{looser=@borneo.get_tribes[0].tribal_council(immune: immune_member)}"
 		@jury.add_member(looser)
-		@borneo.loosing_tribe.members.each{|member| print "#{member.name}, "}
+		@borneo.get_tribes[0].members.each{|member| print "#{member.name}, "}
 		puts ""
 	end
 

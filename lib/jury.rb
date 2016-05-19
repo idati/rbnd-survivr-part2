@@ -11,8 +11,8 @@ class Jury
   		finalists.each{|x| tmp<<x.to_s}
 		  final=Hash[tmp.zip (0...tmp.length)]
       final.keys.each{|k| final[k]=0}
-		  @members.each{|member|  final[tmp[Random.rand((tmp.length))]]+=1
-                              puts "#{member}, "}
+		  @members.each{|member|  final[z=tmp[Random.rand((tmp.length))]]+=1
+                              puts "#{member}, votes for final #{z}"}
       final
   	end
 
